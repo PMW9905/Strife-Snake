@@ -4,7 +4,7 @@ Python-based Discord bot that allows users to manage their own personal director
 Utilizes the Discord.py libraries to guide the interactions between Discord user and Strife Snake.
 Automatically creates personal dir for Discord user based on their Discord ID
 
-##Command List
+## Command List
 
 Create: Allows user to create .py or .txt files.
   $create <file>
