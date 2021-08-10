@@ -5,7 +5,7 @@ Utilizes the Discord.py libraries to guide the interactions between Discord user
 Automatically creates personal dir for Discord user based on their Discord ID
 
 ## Example Usecase
-![Strife-Snake screenshot](StrifeSnake_Screenshot.PNG)
+![Strife-Snake screenshot](StrifeSnake_UseCase.PNG)
 
 ## Command List
 
