@@ -210,7 +210,7 @@ async def write(ctx, file_name, *, text):
     user_id = str(ctx.message.author.id)
 
     # Returns if file_name doesn't end in .py or .txt
-    if len(file_name) < 4 or (file_name[-3:] != ".py" and file_name[-4:] != ".txt") or file_name.find("/") >= 0:
+    if len(file_name) < 4 or (file_name[-3:] != ".py" and file_name[-4:] != ".txt"):
         await ctx.send("Invalid valid file extension. Must end in .py or .txt")
         return
     # Returns if ID is not whitelisted.
@@ -254,7 +254,7 @@ async def write(ctx, file_name, *, text):
 @bot.command(pass_context=True)
 async def run(ctx, file_name, *args):
     # Returns if file isn't .py
-    if len(file_name) < 4 or file_name[-3:] != ".py" or file_name.find("/") >= 0:
+    if len(file_name) < 4 or file_name[-3:] != ".py":
         await ctx.send("Invalid valid file extension. Must end in .py")
         return
     # Returns if ID is not whitelisted.
@@ -280,6 +280,7 @@ async def run(ctx, file_name, *args):
             sub_p = subprocess.Popen(["Python3", "-u", script_to_run], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
             # Send each element in *args as individual stdin write.
             for user_input in args:
+                user_input = user_input+"\n"
                 sub_p.stdin.write(user_input.encode())
             # Once all input is sent, retrieve output and end execution of subprocess.
             output = sub_p.communicate()[0]
